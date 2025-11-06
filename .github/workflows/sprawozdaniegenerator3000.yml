@@ -7,8 +7,8 @@ jobs:
       - run: sudo apt-get install texlive-xetex inkscape pandoc
       - uses: actions/checkout@v4
       - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel
-      - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb
+      - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb --output sprawko.pdf
       - uses: actions/upload-artifact@v4
         with:
-          path: pint_and_boiling_point.pdf
+          path: sprawko.pdf
 
