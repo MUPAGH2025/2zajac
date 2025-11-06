@@ -4,7 +4,7 @@ jobs:
   sprawozdanie_pdf:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get install texlive-xetex inkspace pandoc
+      - run: sudo apt-get install texlive-xetex inkscape pandoc
       - uses: actions/checkout@v4
       - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel
       - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb checkout
