@@ -1,14 +1,22 @@
 name: sprawozdanie_pdf
 on: push
+
 jobs:
   sprawozdanie_pdf:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get install texlive-xetex inkscape pandoc
       - uses: actions/checkout@v4
-      - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel matplotlib
+
+      - name: Fix mirrors and install deps
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y texlive-xetex inkscape pandoc
+
+      - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel
+
       - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb --output sprawko.pdf
+
       - uses: actions/upload-artifact@v4
         with:
+          name: sprawko
           path: sprawko.pdf
-
