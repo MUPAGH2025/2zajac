@@ -12,7 +12,7 @@ jobs:
           sudo apt-get update || true
           sudo apt-get install -y texlive-xetex inkscape pandoc
 
-      - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel
+      - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel pympdata
 
       - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb --output sprawko.pdf
 
