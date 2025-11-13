@@ -14,7 +14,7 @@ jobs:
 
       - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel pympdata
 
-      - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb --output sprawko.pdf
+      - run: python -m nbconvert --to pdf --execute shallow_water.ipynb --output sprawko.pdf
 
       - uses: actions/upload-artifact@v4
         with:
