@@ -14,9 +14,9 @@ jobs:
 
       - run: pip install pint open_atmos_jupyter_utils scipy nbconvert ipykernel pympdata
 
-      - run: python -m nbconvert --to pdf --execute shallow_water.ipynb --output sprawko.pdf
+      - run: python -m nbconvert --to pdf --execute River_shallow_water.ipynb --output sprawozdanie_projekt1.pdf
 
       - uses: actions/upload-artifact@v4
         with:
-          name: sprawko
-          path: sprawko.pdf
+          name: sprawozdanie_projekt1
+          path: sprawozdanie_projekt1.pdf
